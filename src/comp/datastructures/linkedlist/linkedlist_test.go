@@ -1,7 +1,7 @@
 package linkedlist
 
 import (
-	"fmt"
+	"github.com/benjgrad/COMP/src/comp/datastructures/linkedlist"
 	"testing"
 )
 
@@ -19,9 +19,9 @@ func TestPrepend(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		sut := LList{}
+		sut := linkedlist.LList{}
 		for i := 0; i < test.input; i++ {
-			sut.Prepend(&Node{Value: test.input - i})
+			sut.Prepend(&linkedlist.Node{Value: test.input - i})
 		}
 
 		if sut.Size != test.output {
@@ -29,9 +29,9 @@ func TestPrepend(t *testing.T) {
 		}
 
 		currentNode := *sut.Head
-		fmt.Println("\nList Size Value:", sut.Size)
+		t.Log("\nList Size Value:", sut.Size)
 		for i := 0; i < sut.Size; i++ {
-			fmt.Println("Node Value:", currentNode.Value, "Next:", currentNode.Next)
+			t.Log("Node Value:", currentNode.Value, "Next:", currentNode.Next)
 			if currentNode.Value != i+1 {
 				t.Error("Test failed: {} expected, received {}", test.output, sut.Size)
 			}

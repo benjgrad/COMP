@@ -1,9 +1,12 @@
 FROM golang:1.16
 
-WORKDIR /go/src/app
+WORKDIR /app
+COPY go.mod ./
+
 COPY . .
 
-RUN go get -d -v ./...
-RUN go install -v ./...
+RUN go mod download
 
-CMD ["app"]
+RUN go build -o /comp ./src/app
+
+CMD ["/comp"]
