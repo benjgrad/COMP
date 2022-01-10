@@ -1,6 +1,6 @@
 # COMP
 
-### building the DockerFile
+### Building the DockerFile
 
 You can build the DockerFile found in the current directory `.` and tag it `comp`
 
@@ -10,7 +10,7 @@ docker build -t comp .
 
 ### Running the image
 
-Now that the image is built, we can run it. Some notable flags are '-d' as detached, and '-p 1234:1234' for port mapping (eg. in web applications).
+Now that the image is built, we can run it. Some notable flags are `-d` as detached, and `-p 1234:1234` for port mapping (eg. in web applications).
 
 ```bash
 docker run --name Cmg.Tools -d comp
@@ -25,6 +25,8 @@ go run src/comp/comp.go <linked list | other commands>
 ```
 
 ### Testing
+
+To test, run `go test <filename>`. For verbose output include the `-v` flag.
 
 ```bash
 go test -v src/comp/datastructures/linkedlist/linkedlist_test.go
