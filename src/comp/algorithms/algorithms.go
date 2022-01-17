@@ -1,5 +1,10 @@
 package algorithms
 
+
+//TODO Implement 0-1 Knapsack
+
+//TODO Implement Djistra's algorithm
+
 func BinarySearch (arr []int, target int) int {
 	var pivot, left, right int = 0, 0, len(arr) - 1
 	for ; left<=right ; {
